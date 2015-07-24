@@ -37,7 +37,7 @@ pass=${myarray[0]}
 
 
 
-sync_server_ip='10.30.232.0'
+sync_server_ip='10.30.233.0'
 FILE='owncloudsync.sh'
 
 cat > $FILE <<- EOM
