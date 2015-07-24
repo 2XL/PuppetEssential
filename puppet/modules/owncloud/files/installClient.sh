@@ -11,4 +11,6 @@ sudo apt-get update
 sudo apt-get build-dep owncloud-client
 sudo apt-get -y install owncloud-client
 
+if [ ! -d '/home/vagrant/owncloud_folder' ]; then
 mkdir /home/vagrant/owncloud_folder
+fi
