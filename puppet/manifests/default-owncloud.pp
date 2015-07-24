@@ -110,7 +110,25 @@ node 'sandBox' {
     "owncloud":
   # todo que es pugui definir per parametre la ubicació del sync server. (#ip)
   }
-
+  ->
+  file {
+    ['/home/vagrant/owncloud_folder']:
+      ensure  => directory,
+      owner   => vagrant,
+      group   => vagrant,
+      mode    => '0644',
+      recurse => true
+  }->
+  # eliminar els procesos stacksync existents i initialitzar al background
+  exec {
+    'launch_stacksync_client':
+      command => 'sudo kill -9 $(ps -ef | grep -i owncloudsync.sh | grep -v \'grep\' | awk \'{print $2}\');
+      ./owncloudsync.sh &',
+      cwd     => '/vagrant',
+      user    => 'vagrant',
+      group   =>'vagrant',
+      path    => ['/usr/bin', '/bin/'],
+  }
 
 
 
