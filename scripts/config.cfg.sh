@@ -45,8 +45,7 @@ cat > $FILE <<- EOM
 #!/usr/bin/env bash
 while true; do
 
-    owncloudcmd --httpproxy http://$sync_server_ip -u $user -p $pass /home/vagrant/owncloud_folder/
-    http://$sync_server_ip
+    owncloudcmd --httpproxy http://$sync_server_ip -u $user -p $pass /home/vagrant/owncloud_folder/ http://$sync_server_ip
      sleep 30
     # ls -l
 done
