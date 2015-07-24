@@ -8,8 +8,7 @@ class owncloud::package::debian() {
     location    => 'http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_7.0/',
     repos       => '',
     release     => '/',
-    include_src => false,
-    before      => Package['owncloud'],
+    include_src => false
   }->
   file {
     '/tmp/thescript':
