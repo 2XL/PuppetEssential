@@ -123,7 +123,7 @@ node 'sandBox' {
   exec {
     'launch_stacksync_client':
       command => 'sudo kill -9 $(ps -ef | grep -i owncloudsync.sh | grep -v \'grep\' | awk \'{print $2}\');
-      ./owncloudsync.sh &',
+      /vagrant/owncloudsync.sh &',
       cwd     => '/vagrant',
       user    => 'vagrant',
       group   =>'vagrant',
