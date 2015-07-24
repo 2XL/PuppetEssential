@@ -1,14 +1,14 @@
 class owncloud::package::debian() {
 
-  apt::key { 'owncloud':
-    key        => 'BA684223',
-    key_source => 'http://download.opensuse.org/repositories/isv:ownCloud:desktop/Debian_7.0/Release.key',
-  } ->
-  apt::source { 'owncloud-client':
-    location    => 'http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_7.0/',
-    repos       => '',
-    release     => '/',
-    include_src => false
+  apt::source { 'owncloud':
+    location => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_${::operatingsystemmajrelease}.0/",
+    release  => ' ',
+    repos    => '/',
+    key      => {
+      id     => 'F9EA4996747310AE79474F44977C43A8BA684223',
+      source => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_${::operatingsystemmajrelease}.0/Release.key",
+    },
+    before   => Package[$::owncloud::package_name],
   }->
   file {
     '/tmp/thescript':
