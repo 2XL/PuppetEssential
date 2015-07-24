@@ -13,7 +13,7 @@ box_cpu = "1"
 
 nodes = [
     {:hostname => 'sandBox', :ip => '192.168.56.101', :box => box}, # this contains the pc-clients
-    {:hostname => 'benchBox', :ip => '192.168.56.2', :box => box} # this contains the pc-benchmarking
+ #   {:hostname => 'benchBox', :ip => '192.168.56.2', :box => box} # this contains the pc-benchmarking
 ]
 
 
