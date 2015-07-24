@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 
+[ -f owncloudsync.sh ] && rm owncloudsync.sh
+[ -f ../owncloudsync.sh ] && rm ../owncloudsync.sh
 
 if [ "$#" -ne 0 ]; then
     echo "Illegal number of parameters"
@@ -57,6 +59,9 @@ echo "$FILE has data."
 else
 echo "$FILE is empty."
 fi ;
+
+
+
 ls -l $FILE
 echo 'New credentials generated successfully!!'
 chmod u+x $FILE
