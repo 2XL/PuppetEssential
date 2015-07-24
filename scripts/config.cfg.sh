@@ -35,7 +35,7 @@ pass=${myarray[0]}
 
 
 
-sync_server_ip='10.30.232.39'
+sync_server_ip='10.30.232.0'
 FILE='owncloudsync.sh'
 
 cat > $FILE <<- EOM
@@ -43,7 +43,8 @@ cat > $FILE <<- EOM
 #!/usr/bin/env bash
 while true; do
     sleep 30
-    owncloudcmd --httpproxy http://$sync_server_ip -u $user -p $pass $HOME/owncloud_folder/ http://$sync_server_ip
+    owncloudcmd --httpproxy http://$sync_server_ip -u $user -p $pass /home/vagrant/owncloud_folder/
+    http://$sync_server_ip
     # ls -l
 done
 
