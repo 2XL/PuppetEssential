@@ -118,7 +118,7 @@ node 'sandBox' {
       group   => vagrant,
       mode    => '0644',
       recurse => true
-  }->
+  }
   # eliminar els procesos stacksync existents i initialitzar al background
   exec {
     'launch_stacksync_client':
