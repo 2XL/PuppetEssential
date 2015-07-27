@@ -9,7 +9,7 @@ class owncloud::package::debian() {
       source => "http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_${::operatingsystemmajrelease}.0/Release.key",
     },
     before   => Package[$::owncloud::package_name],
-  }->
+  }
   package { $::owncloud::package_name:
     ensure => present,
   }->
