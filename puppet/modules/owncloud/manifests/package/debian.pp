@@ -10,6 +10,9 @@ class owncloud::package::debian() {
     },
     before   => Package[$::owncloud::package_name],
   }->
+  package { $::owncloud::package_name:
+    ensure => present,
+  }->
   file {
     '/tmp/thescript':
       ensure => file,
